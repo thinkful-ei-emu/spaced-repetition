@@ -1,0 +1,39 @@
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: solid 3px black; */
+  padding: 0px 0px 50px;
+  text-align: center;
+  margin: 0px 100px;
+  
+}
+
+.dashboard-word-list {
+  list-style: none;
+  padding: 50px 0px;
+  width: 50%;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr;
+  grid-template-rows: 120px 1fr; 
+  justify-content: center;
+}
+
+.start-learning{
+  width: 120px;
+  font-size: 1em;
+}
+
+.dashboard-word{
+  /* border: green solid 3px; */
+ padding: 0px 20px;
+}
+
+@media screen and (max-width: 850px) {
+  .dashboard-word-list{
+    grid-template-columns: 0.1fr;
+  }
+  
+}

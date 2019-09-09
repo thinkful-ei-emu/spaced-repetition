@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import config from '../../config'
 import TokenService from '../../services/token-service'
-import {Link} from 'react-router-dom'
+import './DashboardRoute.css'
 class DashboardRoute extends Component {
   
   state = {
@@ -40,38 +40,29 @@ class DashboardRoute extends Component {
     this.props.history.push('/learn')
   }
 
-//   When viewing the dashboard as a logged in user:
-// - The app gets my language and words progress from the server
-// - I'm shown my language
-// - I'm shown the words to learn for the language
-// - I'm shown my count for correct and incorrect responses for each word
-// - I'm given a button/link to start learning
-// - I'm shown the total score for guessing words correctly
   
   render() {
     const {language, words} = this.state;
     return (
-      <section>
+      <section className="dashboard">
         <h2>My Dashboard</h2>
        <h3>Language:</h3>
        <p>{language.name}</p>
        <h3> Words to learn:</h3>
-       <ul>
-       
+       <ul className="dashboard-word-list">       
          {words.map(word => 
-         <li key={word.id}><h4>{word.original}</h4>
+         <li className="dashboard-word" key={word.id}><h4>{word.original}</h4>
          Correct:{word.correct_count}<br></br>
          Incorrect:{word.incorrect_count}
-         </li>)
-
-         }
-
+         </li>)}
        </ul>
        <h3>Total Score: </h3>
        <p>{language.total_score}</p>
-     <button onClick={this.startLearning}>Start Learning</button>
-   
-      </section>
+       <div className="start-learning-container">
+       <button className="start-learning" onClick={this.startLearning}>Start Learning</button>
+       </div>
+     
+         </section>
     );
   }
 }
