@@ -8,12 +8,17 @@
 
 
 input {
-margin: 2%;
-border-style:none;
+margin: 1%;
+border: solid 1px rgb(233, 233, 241);
 border-radius: 5px;
-padding: 2%;
+padding: 1%;
+background-color: rgb(244, 244, 245)
 }
 
 input:hover {
-  border: rgb(243, 7, 7) solid
+  border: rgb(243, 7, 7) solid 1px;
+}
+
+.RegistrationFooter a{
+padding-top: 2%;
 }
