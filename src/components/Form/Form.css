@@ -1,0 +1,19 @@
+.LoginForm {
+  display: inherit;
+  justify-content: center;
+  flex-direction: column;
+  align-content: space-around;
+  
+}
+
+
+input {
+margin: 2%;
+border-style:none;
+border-radius: 5px;
+padding: 2%;
+}
+
+input:hover {
+  border: rgb(243, 7, 7) solid
+}

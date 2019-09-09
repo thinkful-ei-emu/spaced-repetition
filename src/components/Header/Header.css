@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+.main_header {
+  display: inherit;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+/*   background-color: rgba(250, 235, 215, 0.767); */
+  background-color: rgb(245, 248, 248);
+ filter: drop-shadow(0 0 20px #333);
+
+}
+h1{
+  padding-left: 3%;
+}
+a.app_title {
+  font-family: 'Satisfy', cursive;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.links a:hover  {
+  color: rgb(16, 85, 16);
+  text-decoration-line: underline;
+}
+
+.links {
+  display: inherit;
+  padding: 3%;
+  font-size: 125%;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.user_name {
+  
+}
+
+@media screen and (max-width: 500px){
+  .main_header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .links {
+    flex-direction: column;
+  }
+}
