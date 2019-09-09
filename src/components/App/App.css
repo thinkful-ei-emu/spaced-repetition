@@ -8,10 +8,6 @@
 
 main {
   display: flex; 
-<<<<<<< HEAD
-   background-image: url('../../media/3695.jpg');
-  background-size: cover;
-=======
   height: 100vh;
  
 }
@@ -24,5 +20,4 @@ main {
   main{
   background-size: auto;
   }
->>>>>>> master
 }
