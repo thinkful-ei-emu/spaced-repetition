@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import './DashboardRoute.css'
+import Button from '../../components/Button/Button'
+
 class DashboardRoute extends Component {
   
   state = {
@@ -44,10 +46,15 @@ class DashboardRoute extends Component {
   render() {
     const {language, words} = this.state;
     return (
-      <section className="dashboard">
-        <h2>My Dashboard</h2>
-       <h3>Language:</h3>
-       <p>{language.name}</p>
+      <section className="dashboard">          
+       
+        <h2 className="dash-title">My Dashboard</h2>  
+      
+      <div className="language-score">
+      <h3>Language: <span>{language.name}</span></h3>      
+       <h3>Total Score: <span>{language.total_score}</span></h3>
+      </div>
+      
        <h3> Words to learn:</h3>
        <ul className="dashboard-word-list">       
          {words.map(word => 
@@ -56,12 +63,12 @@ class DashboardRoute extends Component {
          Incorrect:{word.incorrect_count}
          </li>)}
        </ul>
-       <h3>Total Score: </h3>
-       <p>{language.total_score}</p>
+       
+       <p></p>
        <div className="start-learning-container">
-       <button className="start-learning" onClick={this.startLearning}>Start Learning</button>
+       <Button className="start-learning" onClick={this.startLearning}>Start Learning</Button>
        </div>
-     
+ 
          </section>
     );
   }
