@@ -9,3 +9,9 @@
   background-size: cover;
   
 }
+
+@media screen and (max-width:800px){
+  .Registration{
+    background-size: auto;
+  }
+}

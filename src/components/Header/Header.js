@@ -32,7 +32,7 @@ class Header extends Component {
     return (
       <nav>
         <Link to='/login'>Login</Link>
-        {' '}
+        {' '}<br></br>
         <Link to='/register'>Sign up</Link>
       </nav>
     )
