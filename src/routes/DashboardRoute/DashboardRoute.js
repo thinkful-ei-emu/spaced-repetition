@@ -46,8 +46,8 @@ class DashboardRoute extends Component {
     return (
       <section className="dashboard">
         <h2>My Dashboard</h2>
-       <h3>Language:</h3>
-       <p>{language.name}</p>
+        <span><h3>Language:</h3>
+        {language.name}</span>
        <h3> Words to learn:</h3>
        <ul className="dashboard-word-list">       
          {words.map(word => 

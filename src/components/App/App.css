@@ -4,7 +4,7 @@
 }
 
 main {
-  display: flex;
-  background-image: url('../../media/3695.jpg');
+  display: flex; 
+   background-image: url('../../media/3695.jpg');
   background-size: cover;
 }
