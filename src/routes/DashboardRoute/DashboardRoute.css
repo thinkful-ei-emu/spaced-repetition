@@ -3,17 +3,43 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* border: solid 3px black; */
-  padding: 0px 0px 50px;
+  padding: 0px;
   text-align: center;
   margin: 0px auto;
- 
+  width: 100%;
+  background-image: url('../../media/capstone2-italy-banner2.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  
+
+  
+} 
+
+.language-score{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.dash-title{
+  /* border: blue solid 3px; */
+  padding-bottom: 100px;
+  font-size: 3em;
+  
+  
+}
+
+
+
+.flag{
+  height: auto;
+  width: 100%;
 }
 
 .dashboard-word-list {
   list-style: none;
   padding: 50px 0px;
-  width: 50%;
+  width: 60%;
   margin: 0px auto;
   display: grid;
   grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
@@ -22,7 +48,7 @@
 }
 
 .start-learning{
-  width: 120px;
+ 
   font-size: 1em;
 }
 
