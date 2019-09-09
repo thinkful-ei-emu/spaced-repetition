@@ -1,7 +1,11 @@
 .Registration {
   display: flex;
-  margin: 0 auto;
-  flex-direction: column;
+  width: 100vmax;
+/*   margin: 0 auto;
+ */  flex-direction: column;
   text-align: center;
   padding: 5%;
+  background-image: url('../../media/3695.jpg');
+  background-size: cover;
+  
 }

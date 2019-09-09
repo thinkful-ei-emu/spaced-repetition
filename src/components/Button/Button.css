@@ -1,8 +1,8 @@
 .Button {
   border-radius: 5px;
   border-style: none;
-  padding: 3% 7%;
-  margin-top: 5%;
+  padding: 1% 4%;
+  margin: 3%;
   background-color: rgb(1, 58, 1);
   color: whitesmoke;
 }
