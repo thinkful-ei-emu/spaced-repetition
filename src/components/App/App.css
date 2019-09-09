@@ -2,13 +2,14 @@
 
 .App {
   display: flex;
-  flex-direction: column;
-  
+  flex-direction: column;  
+  max-height: 100vh;
 }
 
 main {
-  display: flex;
-  height: 100vh
+  display: flex; 
+  height: 100vh;
+ 
 }
 
 .Subheader {
