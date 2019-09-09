@@ -1,0 +1,7 @@
+.Login {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  text-align: center;
+  padding: 5%;
+}

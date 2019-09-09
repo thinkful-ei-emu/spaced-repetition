@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  background-image: url('../../media/3695.jpg');
+  background-size: cover;
+}
