@@ -9,3 +9,12 @@
   background-size: cover;
   
 }
+.footer_link:hover{
+  color: rgb(16, 85, 16);
+  text-decoration-line: underline;
+}
+@media screen and (max-width:800px){
+  .Registration{
+    background-size: auto;
+  }
+}
