@@ -1,0 +1,24 @@
+.LoginForm {
+  display: inherit;
+  justify-content: center;
+  flex-direction: column;
+  align-content: space-around;
+  
+}
+
+
+input {
+margin: 1%;
+border: solid 1px rgb(233, 233, 241);
+border-radius: 5px;
+padding: 1%;
+background-color: rgb(244, 244, 245)
+}
+
+input:hover {
+  border: rgb(243, 7, 7) solid 1px;
+}
+
+.RegistrationFooter a{
+padding-top: 2%;
+}

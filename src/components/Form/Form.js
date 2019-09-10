@@ -3,9 +3,9 @@ import cx from 'classnames'
 import './Form.css'
 
 export function Label({ className, ...props }) {
-  return (
-    <label className={cx('Label', className)} {...props} />
-  )
+  return (<>
+    <label className={cx('Label', className)} {...props} /><br></br>
+  </>)
 }
 
 export const Input =  React.forwardRef(({ className, ...props }, ref) => {
@@ -18,6 +18,7 @@ export function Required({ className, ...props }) {
   return (
     <span className={cx('Required', className)} {...props}>
       &#42;
+      <br></br>
     </span>
   )
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
-
+import './LoginRoute.css'
 class LoginRoute extends Component {
   static defaultProps = {
     location: {},
@@ -17,12 +17,12 @@ class LoginRoute extends Component {
 
   render() {
     return (
-      <section>
+      <div className='Login'>
         <h2>Login</h2>
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}
         />
-      </section>
+      </div>
     );
   }
 }
