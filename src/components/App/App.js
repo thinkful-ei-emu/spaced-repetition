@@ -7,6 +7,8 @@ import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute'
 import LoginRoute from '../../routes/LoginRoute/LoginRoute'
 import DashboardRoute from '../../routes/DashboardRoute/DashboardRoute'
 import LearningRoute from '../../routes/LearningRoute/LearningRoute'
+import CorrectRoute from '../../routes/CorrectRoute/Correct'
+import IncorrectRoute from '../../routes/IncorrectRoute/Incorrect'
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute'
 import './App.css'
 
@@ -36,6 +38,14 @@ export default class App extends Component {
             <PrivateRoute
               path={'/learn'}
               component={LearningRoute}
+            />
+            <PrivateRoute
+              path={'/correct'}
+              component={CorrectRoute}
+            />
+            <PrivateRoute
+              path={'/incorrect'}
+              component={IncorrectRoute}
             />
             <PublicOnlyRoute
               path={'/register'}

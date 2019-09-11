@@ -6,11 +6,6 @@ import './DashboardRoute.css'
 import Button from '../../components/Button/Button'
 
 class DashboardRoute extends Component {
-  static defaultProps = { 
-      history: {
-        push: () => {},
-      },
-    }
   state = {
     language: {},
     words: [],
@@ -52,7 +47,6 @@ class DashboardRoute extends Component {
     e.preventDefault();
     this.props.history.push('/learn')
   }
-  
   
   render() {
     const {language, words} = this.state;

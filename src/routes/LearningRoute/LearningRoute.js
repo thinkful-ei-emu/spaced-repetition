@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import LearningFrom from './LearningForm'
+import LearningContext from '../../contexts/LearningContext';
 import './learningRoute.css'
 
 class LearningRoute extends Component {
@@ -11,9 +12,10 @@ class LearningRoute extends Component {
     wordIncorrectCount: null,
     totalScore: null,
     guess: null,
-    isCorrect: false
   }
   
+  static contextType = LearningContext
+
   componentDidMount(){
     this.fetchWord();
   }
@@ -75,22 +77,9 @@ class LearningRoute extends Component {
         totalScore: resObj.totalScore,
         isCorrect: resObj.isCorrect
       })
-      /**
-       *     (resObj.isCorrect) ? display correct : display incorrect
-       */
-
-      //  let correct = <p>Good job, you got it correct!
-      //    Correct count: {resObj.wordCorrectCount}
-      //    Incorrect count: {resObj.wordIncorrectCount}
-      //    <button>Next Word</button>
-      //  </p>
-
-      // let incorrect = <p>You still need more practice with this word.
-      //   The correct answer was {resObj.answer}.
-      //   Correct count: {resObj.wordCorrectCount}
-      //   Incorrect count: {resObj.wordIncorrectCount}
-      //   <button>Next Word </button>
-      // </p>
+      resObj.isCorrect ?
+      this.props.history.push('/correct')
+      : this.props.history.push('/incorrect')
     })
     .catch(error => {  
       console.error({ error });
@@ -103,12 +92,7 @@ class LearningRoute extends Component {
         <div className="word">
         <h2>Translate the word:</h2> <span>{this.state.nextWord}</span>
         </div>
-        
         <LearningFrom setGuess={this.setGuess} submitGuess={this.submitGuess}/>
-        
-        {/* <Correct/>
-        <Incorrect/> */}
-
         <p>Your total score is: {this.state.totalScore}</p>
         <hr/>
         <p>You have answered this word correctly {this.state.wordCorrectCount} times.</p>
