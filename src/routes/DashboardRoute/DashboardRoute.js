@@ -46,7 +46,6 @@ class DashboardRoute extends Component {
       .catch(error => {  
         console.error({ error });
       });
-
   }
 
   startLearning = e => {
@@ -58,30 +57,30 @@ class DashboardRoute extends Component {
   render() {
     const {language, words} = this.state;
     return (
-      <section className="dashboard">          
-       
-        <h2 className="dash-title">My Dashboard</h2>  
-      
-      <div className="language-score">
-      <h3>Language: <span>{language.name}</span></h3>      
-       <h3>Total Score: <span>{language.total_score}</span></h3>
-      </div>
+      <section className="dashboard">      
+        <div className="dash-header">
+        <h2 className="dash-title">{language.name}</h2> 
+          <div className="language-score"> 
+          Total correct answers: {language.total_score}
+          </div>
+      </div>    
       
        <h3> Words to learn:</h3>
        <ul className="dashboard-word-list">       
          {words.map(word => 
-         <li className="dashboard-word" key={word.id}><h4>{word.original}</h4>
+         <li className="dashboard-word" key={word.id}>
+         <h4>{word.original}</h4>
          Correct:{word.correct_count}<br></br>
          Incorrect:{word.incorrect_count}
          </li>)}
        </ul>
-       
-       <p></p>
-       <div className="start-learning-container">
-       <Button className="start-learning" onClick={this.startLearning}>Start Learning</Button>
-       </div>
- 
-         </section>
+      
+        <footer className="dash-footer">
+          <div className="start-learning-container">
+           <Button className="start-learning" onClick={this.startLearning}>Start Learning</Button>
+          </div>
+        </footer>
+      </section>
     );
   }
 }

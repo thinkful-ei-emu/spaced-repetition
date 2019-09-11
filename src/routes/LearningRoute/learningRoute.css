@@ -1,0 +1,43 @@
+.learning-route{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  background-image:url('../../media/capstone2-italy-banner2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  margin-top: 230px;
+}
+
+.learning-buttons{
+  margin: -20px;
+}
+
+.learning-buttons button{
+  width: 270px;
+}
+
+.word{
+  /* border: blue solid 2px; */
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  text-align: center;
+  width: 100%;
+  margin-top: -220px;
+}
+
+.word span{
+  padding-left: 10px; 
+  font-size: 1.5em;
+}
+
+.learn-guess-input-form input{
+  width: 300px;
+}
+
+hr{
+  width: 200px;
+}

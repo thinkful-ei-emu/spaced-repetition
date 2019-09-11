@@ -1,65 +1,78 @@
-
 .dashboard {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0px;
   text-align: center;
-  margin: 0px auto;
   width: 100%;
-  background-image: url('../../media/capstone2-italy-banner2.jpg');
-  background-repeat: no-repeat;
-  background-size: 100% 40%;
-  
-
-  
+  margin: 0 auto;
+  background-image: url('../../media/illustration-mediterranean-city_53876-147.jpg');
+  background-repeat: no-repeat;  
+  background-size: cover;
 } 
 
+.dash-title{
+  /* border: purple solid 2px; */
+  font-weight: 200;
+  font-size: 1.2em;
+}
+
+.dash-header{
+  /* border: yellow solid 2px; */
+  padding: 0 40px;
+  text-align: right;
+  width: 100%;
+  margin-top: -35px;
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 .language-score{
-  display: flex;
+  /* border: pink solid 2px; */
+  width: 300px;
+  display: flex; 
+  flex-direction: row;
   justify-content: space-evenly;
 }
 
-
-.dash-title{
-  /* border: blue solid 3px; */
-  padding-bottom: 100px;
-  font-size: 3em;
-  
-  
-}
-
-
-
-.flag{
-  height: auto;
-  width: 100%;
-}
-
 .dashboard-word-list {
+  /* border: green solid 2px; */
   list-style: none;
-  padding: 50px 0px;
+  padding: 0 ;
   width: 60%;
-  margin: 0px auto;
+  margin: 0px auto 125px;
   display: grid;
   grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
-  grid-template-rows: 120px 1fr; 
+  grid-template-rows: 150px 150px; 
   justify-content: center;
 }
 
-.start-learning{
- 
-  font-size: 1em;
-}
 
 .dashboard-word{
-  /* border: green solid 3px; */
- padding: 0px 20px;
+  border: rgb(244, 226, 205) solid 1px;
+  background-color: rgb(255, 255, 255);
+  margin: 15px;
+  filter: drop-shadow(0 0 5px rgb(193, 183, 183));
+}
+
+.dash-footer{
+  /* border: blue solid 2px; */
+  height: 160px;
+  width: 100vmax;
+  position: fixed;
+  bottom: 0;
+}
+
+button{
+  font-size: 1em;
 }
 
 @media screen and (max-width: 850px) {
   .dashboard-word-list{
-    grid-template-columns: 0.1fr;
+    grid-template-columns: 0.2fr 0.2fr;
+    grid-template-rows: 120px 1fr; 
   }
   
 }
