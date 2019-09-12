@@ -74,4 +74,10 @@ button{
     grid-template-rows: 120px 1fr; 
   }
   
+  .dashboard-word{
+    border: rgb(244, 226, 205) solid 1px;
+    background-color: rgb(255, 255, 255);
+    margin: 15px;
+    filter: drop-shadow(0 0 5px rgb(193, 183, 183));
+  }
 }
