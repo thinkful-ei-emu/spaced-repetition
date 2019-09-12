@@ -70,19 +70,14 @@ class LearningRoute extends Component {
       return res.json()
     })
     .then((resObj) => {
+      console.log('got response');
       console.log(resObj);
-      this.setState({
-        nextWord: resObj.nextWord,
-        wordCorrectCount: resObj.wordCorrectCount,
-        wordIncorrectCount: resObj.wordIncorrectCount,
-        totalScore: resObj.totalScore,
-        isCorrect: resObj.isCorrect
-      })
       resObj.isCorrect ?
       this.props.history.push('/correct')
       : this.props.history.push('/incorrect')
     })
-    .catch(error => {  
+    .catch(error => { 
+      console.log('caught in error') 
       console.error({ error });
     });
   }
