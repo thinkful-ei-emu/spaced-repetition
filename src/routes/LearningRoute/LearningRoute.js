@@ -52,6 +52,7 @@ class LearningRoute extends Component {
 
   submitGuess = (e) => {
     e.preventDefault();
+  
     const { guess } = e.target
     const submittedGuess = {
       guess: guess.value

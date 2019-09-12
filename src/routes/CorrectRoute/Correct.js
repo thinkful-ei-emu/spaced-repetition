@@ -4,8 +4,8 @@ import Button from '../../components/Button/Button';
 
 function CorrectRoute(props) {
 const handleClick = (event)=>{
+  console.log(props)
 event.preventDefault()
-console.log(props)
 props.history.goBack()
 }
   return (
