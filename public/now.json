@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "alias": "mac-spaced-repetition",
+  "version": 2,
+  "alias": "colleen-mac-spaced-repetition",
   "name": "colleen-spaced-repetition",
   "routes": [
       {
