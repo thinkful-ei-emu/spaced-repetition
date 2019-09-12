@@ -2,7 +2,11 @@ import React from 'react';
 import './Incorrect.css';
 import Button from '../../components/Button/Button'
 
-function IncorrectRoute() {
+function IncorrectRoute(props) {
+  const handleClick = (event)=>{
+    event.preventDefault()
+    props.history.goBack()
+    }
   return (
     <section className="incorrect-answer">
     <div className="incorrect-feedback"> 
@@ -17,7 +21,7 @@ function IncorrectRoute() {
         Incorrect count: 4
         </p>
       </div>
-      <Button>Next Word </Button>
+      <Button onClick={(e)=>handleClick(e)}>Next Word </Button>
     </section>
   )
 }

@@ -2,8 +2,12 @@ import React from 'react';
 import './Correct.css';
 import Button from '../../components/Button/Button';
 
-function CorrectRoute() {
-
+function CorrectRoute(props) {
+const handleClick = (event)=>{
+event.preventDefault()
+console.log(props)
+props.history.goBack()
+}
   return (
     <section className="correct-answer">
       <div className="correct-feedback">
@@ -15,7 +19,7 @@ function CorrectRoute() {
         Incorrect count: 2
         </p>
       </div>
-      <Button type="submit">Next Word</Button>
+      <Button onClick={(e)=>handleClick(e)}type="submit">Next Word</Button>
     </section>
   )
 
