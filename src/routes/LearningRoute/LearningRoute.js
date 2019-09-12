@@ -70,6 +70,7 @@ class LearningRoute extends Component {
       return res.json()
     })
     .then((resObj) => {
+      console.log(resObj);
       this.setState({
         nextWord: resObj.nextWord,
         wordCorrectCount: resObj.wordCorrectCount,

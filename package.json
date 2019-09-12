@@ -21,8 +21,7 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "predeloy": "npm run build",
-    "deploy": "now ./build",
-    "postdeploy": "now alias -A ./build/now.json"
+    "deploy": "now ./build"
   },
   "eslintConfig": {
     "extends": "react-app"
