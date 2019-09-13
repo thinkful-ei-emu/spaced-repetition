@@ -84,7 +84,8 @@ class LearningRoute extends Component {
         isCorrect: resObj.isCorrect
       })    
     })
-    .catch(error => {  
+    .catch(error => { 
+      console.log('caught in error') 
       console.error({ error });
     });
   }

@@ -28,6 +28,7 @@ class DashboardRoute extends Component {
       return res.json()
     })
       .then((resObj) => {
+        console.log(resObj);
         if(resObj.error){
           const {history} = this.props 
           this.context.processLogout();
