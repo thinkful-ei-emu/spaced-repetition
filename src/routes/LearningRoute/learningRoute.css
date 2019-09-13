@@ -10,14 +10,9 @@
   background-size: 100vmax;
   background-position-y: bottom;
   height: 100vh;
-  /* margin-top: 50px; */
+  margin-top: 4%;
 }
 
-/* .learning-buttons{
-  margin: -20px;
-  padding: 10px;
-}
- */
 .learning-buttons button{
   width: 270px;
 }

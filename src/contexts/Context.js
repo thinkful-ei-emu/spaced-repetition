@@ -114,26 +114,6 @@ export class ContextProvider extends Component {
         this.setError(err)
       })
   }
-  // setHead = answer => {
-  //   this.setState({
-  //     nextWord: answer.nextWord,
-  //     wordCorrectCount: answer.wordCorrectCount,
-  //     wordIncorrectCount: answer.wordIncorrectCount,
-  //     totalScore: answer.totalScore
-  //   })
-  // }
-
-  // setAnswer = answer => {
-  //   console.log('answer in setAnswer', answer)
-  //   this.setState({
-  //     nextWord: answer.nextWord,
-  //     wordCorrectCount: answer.wordCorrectCount,
-  //     wordIncorrectCount: answer.wordIncorrectCount,
-  //     totalScore: answer.totalScore,
-  //     isCorrect: answer.isCorrect
-  //   })
-  // }
-
   render() {
     const value = {
       user: this.state.user,

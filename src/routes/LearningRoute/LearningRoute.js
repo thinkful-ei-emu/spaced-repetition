@@ -89,7 +89,6 @@ class LearningRoute extends Component {
       })    
     })
     .catch(error => { 
-      console.log('caught in error') 
       console.error({ error });
     });
   }

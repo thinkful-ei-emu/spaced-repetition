@@ -6,14 +6,12 @@ import Button from '../../components/Button/Button';
 class CorrectRoute extends React.Component { 
  
   handleClick = (event)=>{
-    console.log(this.props)
     event.preventDefault()   
     this.props.resetCorrect();
     
   }
    
   render(){
-    console.log(this.props)
     return (
      
       <section className="correct-answer">
