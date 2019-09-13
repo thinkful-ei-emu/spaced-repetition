@@ -16,6 +16,8 @@ class LearningRoute extends Component {
     wordIncorrectCount: null,
     nextWordCorrectCount: 0,
     nextWordIncorrectCount: 0,
+    original: null,
+    answer: null,
     totalScore: null,
     isCorrect: null,  
   }
@@ -80,6 +82,8 @@ class LearningRoute extends Component {
         wordIncorrectCount: resObj.wordIncorrectCount,
         nextWordCorrectCount: resObj.nextWordCorrectCount,
         nextWordIncorrectCount: resObj.nextWordIncorrectCount,
+        original: resObj.original,
+        answer: resObj.answer,
         totalScore: resObj.totalScore,
         isCorrect: resObj.isCorrect
       })    
@@ -96,7 +100,7 @@ class LearningRoute extends Component {
   }
 
   render() {
-    const {isCorrect, nextWord, guess, nextWordCorrectCount, nextWordIncorrectCount, wordCorrectCount, wordIncorrectCount, totalScore} = this.state;
+    const {isCorrect, nextWord, guess, original, answer, nextWordCorrectCount, nextWordIncorrectCount, wordCorrectCount, wordIncorrectCount, totalScore} = this.state;
      return (     
       <section className="learning-route">
        {isCorrect === null ?
@@ -110,9 +114,9 @@ class LearningRoute extends Component {
         <hr/>
         <p>You have answered this word correctly {nextWordCorrectCount} times.</p>
         <p>You have answered this word incorrectly {nextWordIncorrectCount} times.</p>  
-        </>: isCorrect ? <Correct guess={guess} resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
+        </>: isCorrect ? <Correct guess={guess} answer={answer} original={original} resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
          wordIncorrectCount={wordIncorrectCount} totalScore={totalScore}
-        /> : <Incorrect guess={guess}  resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
+        /> : <Incorrect guess={guess} original={original} answer={answer}  resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
         wordIncorrectCount={wordIncorrectCount} totalScore={totalScore}/>}       
       </section>
      
