@@ -2,19 +2,22 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: center;
   width: 100%;
   bottom: 0;
   background-image:url('../../media/capstone2-italy-banner2.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 400px;
+  background-size: 100vmax;
+  background-position-y: bottom;
+  height: 100vh;
   margin-top: 230px;
 }
 
-.learning-buttons{
+/* .learning-buttons{
   margin: -20px;
+  padding: 10px;
 }
-
+ */
 .learning-buttons button{
   width: 270px;
 }
@@ -22,7 +25,7 @@
 .word{
   /* border: blue solid 2px; */
   display: flex;
-  justify-content: center;
+ justify-content: center;
   align-items: baseline;
   text-align: center;
   width: 100%;
@@ -40,4 +43,23 @@
 
 hr{
   width: 200px;
+}
+
+.Result-scores {
+  align-self: center;
+  padding: 5px;
+  width: 300px;
+  border: rgb(244, 226, 205) solid 1px;
+    background-color: rgb(255, 255, 255);
+    margin: 15px;
+    filter: drop-shadow(0 0 5px rgb(193, 183, 183));
+}
+@media screen and (max-width: 550px){
+  .learning-route{
+    width: 100%;
+    margin-top: 150px;
+    }
+    .Result-scores {
+      width: 275px;
+    }
 }

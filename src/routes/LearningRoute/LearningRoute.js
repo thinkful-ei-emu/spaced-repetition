@@ -95,10 +95,12 @@ class LearningRoute extends Component {
         <h2>Translate the word:</h2> <span>{this.state.nextWord}</span>
         </div>
         <LearningFrom setGuess={this.setGuess} submitGuess={this.submitGuess}/>
+        <div className='Result-scores'>
         <p>Your total score is: {this.state.totalScore}</p>
         <hr/>
         <p>You have answered this word correctly {this.state.wordCorrectCount} times.</p>
         <p>You have answered this word incorrectly {this.state.wordIncorrectCount} times.</p>          
+        </div>
       </section>
     );
   }
