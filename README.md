@@ -18,13 +18,13 @@ Spaced Repetition is a responsive web application that allows users to learn a f
 
 ### Screenshots
 
-<img src="media/images/login.png">
+<img src="src/media/images/login.png">
 
-<img src="media/images/signUp.png">
+<img src="src/media/images/signUp.png">
 
-<img src="media/images/dashboard.png">
+<img src="src/media/images/dashboard.png">
 
-<img src="media/images/learning.png">
+<img src="src/media/images/learning.png">
 
 ### Tech Stack
 - Frontend: JavaScript, React, CSS (flexbox), media queries, 
