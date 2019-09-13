@@ -1,23 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Playfair+Display&display=swap');
 
-.App {
+.App, main {
   display: flex;
   flex-direction: column;  
   max-height: 100vh;
-}
-
-main {
-  display: flex; 
-  height: 100vh;
- 
 }
 
 .Subheader {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-@media screen and (max-width: 975px){
-  main{
-  background-size: auto;
-  }
-}

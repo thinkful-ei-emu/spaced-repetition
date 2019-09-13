@@ -4,7 +4,7 @@
 /*   margin: 0 auto;
  */  flex-direction: column;
   text-align: center;
-  padding: 5%;
+  padding: 2%;
   background-image: url('../../media/3695.jpg');
   background-size: cover;
   
@@ -16,5 +16,6 @@
 @media screen and (max-width:800px){
   .Registration{
     background-size: auto;
+    width: 100%;
   }
 }

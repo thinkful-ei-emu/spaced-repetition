@@ -6,10 +6,11 @@
   text-align: center;
   width: 100%;
   margin: 0 auto;
+  
   background-image: url('../../media/illustration-mediterranean-city_53876-147.jpg');
-  background-repeat: no-repeat;  
   background-size: cover;
 } 
+
 
 .dash-title{
   /* border: purple solid 2px; */
@@ -37,11 +38,10 @@
 }
 
 .dashboard-word-list {
-  /* border: green solid 2px; */
+  
   list-style: none;
-  padding: 0 ;
   width: 60%;
-  margin: auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
   grid-template-rows: 150px 150px; 
@@ -52,6 +52,7 @@
 .dashboard-word{
   border: rgb(244, 226, 205) solid 1px;
   background-color: rgb(255, 255, 255);
+  background-size: auto;
   margin: 15px;
   filter: drop-shadow(0 0 5px rgb(193, 183, 183));
 }
@@ -59,14 +60,15 @@
 .dash-footer{
   /* border: blue solid 2px; */
   height: 160px;
-  width: 100vmax;
-  bottom: 0;
+/*   width: 100vmax;
+ */  bottom: 0;
 }
 
 button{
   font-size: 1em;
   filter: drop-shadow(0 0 5px rgb(193, 183, 183));
 }
+
 
 @media screen and (max-width: 850px) {
   .dashboard-word-list{
@@ -81,3 +83,9 @@ button{
     filter: drop-shadow(0 0 5px rgb(193, 183, 183));
   }
 }
+/* 
+@media screen and (max-width:800px){
+  .dashboard{
+    background-size: auto;
+  }
+} */

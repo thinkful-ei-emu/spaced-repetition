@@ -7,5 +7,13 @@
   padding: 5%;
   background-image: url('../../media/3695.jpg');
   background-size: cover;
+  height: 100vh;
   
+}
+
+@media screen and (max-width:800px){
+  .Login{
+    background-size: auto;
+    width: 100%;
+  }
 }
