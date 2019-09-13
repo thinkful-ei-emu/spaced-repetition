@@ -7,7 +7,7 @@ class LearningForm extends React.Component{
   render(){
     return(
       <form onSubmit={this.props.submitGuess} className="learn-guess-input-form">
-      <Label htmlFor="learn-guess-input">
+      <Label htmlFor="learn-guess-input" className="translate-label">
         What's the translation for this word?
       </Label>
       <Input onChange={e => this.props.setGuess(e)} id="learn-guess-input" name="guess" type="text" required/>

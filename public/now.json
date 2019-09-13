@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "alias": "colleen-mac-spaced-repetition",
-  "name": "colleen-spaced-repetition",
+  "alias": "mac-spaced-repetition",
+  "name": "spaced-repetition",
   "routes": [
       {
         "src": "^/static/(.*)",

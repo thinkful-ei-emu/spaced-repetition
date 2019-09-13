@@ -10,7 +10,7 @@
   background-size: 100vmax;
   background-position-y: bottom;
   height: 100vh;
-  margin-top: 230px;
+  /* margin-top: 50px; */
 }
 
 /* .learning-buttons{
@@ -20,6 +20,10 @@
  */
 .learning-buttons button{
   width: 270px;
+}
+
+.translate-label{
+  margin-top: 150px;
 }
 
 .word{
@@ -57,7 +61,8 @@ hr{
 @media screen and (max-width: 550px){
   .learning-route{
     width: 100%;
-    margin-top: 150px;
+    margin-top: -75px;
+    padding: 4%;
     }
     .Result-scores {
       width: 275px;

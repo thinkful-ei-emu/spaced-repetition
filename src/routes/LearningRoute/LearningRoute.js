@@ -107,17 +107,20 @@ class LearningRoute extends Component {
        {isCorrect === null ?
        <> 
         <div className="word">
-        <h2>Translate the word:</h2> <span>{nextWord}</span>
+          <h2>Translate the word:<p>{nextWord}</p></h2> 
         </div>
-        <LearningForm setGuess={this.setGuess} submitGuess={this.submitGuess}/>       
-        <p>Your total score is: {totalScore}</p>
-        
-        <hr/>
-        <p>You have answered this word correctly {nextWordCorrectCount} times.</p>
-        <p>You have answered this word incorrectly {nextWordIncorrectCount} times.</p>  
-        </>: isCorrect ? <Correct guess={guess} answer={answer} original={original} resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
-         wordIncorrectCount={wordIncorrectCount} totalScore={totalScore}
-        /> : <Incorrect guess={guess} original={original} answer={answer}  resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
+
+        <LearningForm setGuess={this.setGuess} submitGuess={this.submitGuess}/>  
+        <div className="Result-scores">     
+          <p>Your total score is: {totalScore}</p>
+            <hr/>
+          <p>You have answered this word correctly {nextWordCorrectCount} times.</p>
+          <p>You have answered this word incorrectly {nextWordIncorrectCount} times.</p>  
+        </div>
+        </>
+        : isCorrect ? <Correct guess={guess} answer={answer} original={original} resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
+         wordIncorrectCount={wordIncorrectCount} totalScore={totalScore}/> 
+        : <Incorrect guess={guess} original={original} answer={answer}  resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
         wordIncorrectCount={wordIncorrectCount} totalScore={totalScore}/>}       
       </section>
      
