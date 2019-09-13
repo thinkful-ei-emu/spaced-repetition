@@ -52,7 +52,9 @@ class LearningRoute extends Component {
 
   submitGuess = (e) => {
     e.preventDefault();
+  
     const { guess } = e.target
+    console.log(guess.value)
     const submittedGuess = {
       guess: guess.value
     }
@@ -71,13 +73,13 @@ class LearningRoute extends Component {
     })
     .then((resObj) => {
       console.log(resObj);
-      this.setState({
-        nextWord: resObj.nextWord,
-        wordCorrectCount: resObj.wordCorrectCount,
-        wordIncorrectCount: resObj.wordIncorrectCount,
-        totalScore: resObj.totalScore,
-        isCorrect: resObj.isCorrect
-      })
+      // this.setState({
+      //   nextWord: resObj.nextWord,
+      //   wordCorrectCount: resObj.wordCorrectCount,
+      //   wordIncorrectCount: resObj.wordIncorrectCount,
+      //   totalScore: resObj.totalScore,
+      //   isCorrect: resObj.isCorrect
+      // })
       resObj.isCorrect ?
       this.props.history.push('/correct')
       : this.props.history.push('/incorrect')
