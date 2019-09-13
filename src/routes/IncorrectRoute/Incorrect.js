@@ -17,7 +17,7 @@ class IncorrectRoute extends React.Component {
         <p>Correct count: {this.props.wordCorrectCount}</p>
         <p>Incorrect count: {this.props.wordIncorrectCount}</p>
         <p>Your total score is: {this.props.totalScore}</p>
-        <p>`The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${this.props.guess}!`,</p>
+        {/* <p>`The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${this.props.guess}!`,</p> */}
         </div>
         <Button onClick={(e)=>this.handleClick(e)}>Next Word </Button>
       </section>
