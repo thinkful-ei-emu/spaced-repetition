@@ -35,7 +35,6 @@ a {
   line-height: 24px;
   text-align: right;
   align-items: flex-start;
-  width: 20%;
   justify-content: space-evenly;
 }
 
@@ -46,5 +45,6 @@ a {
   }
   .links {
     flex-direction: column;
+    text-align: center;
   }
 }

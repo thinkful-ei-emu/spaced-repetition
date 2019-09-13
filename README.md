@@ -1,5 +1,42 @@
 # Spaced Repetition Capstone
 
+# Spaced repetition API!
+Live API Link: 
+
+<https://shrouded-springs-60057.herokuapp.com/>
+
+GitHub Links: 
+
+https://github.com/thinkful-ei-emu/spaced-repetition-MAC-client
+
+https://github.com/thinkful-ei-emu/spaced-repetition-MAC-api
+
+
+## Application Description 
+Spaced Repetition is a responsive web application that allows users to learn a foreign language. The application utilizes an algorithm to implement  the spaced repetition learning technique, which allows for more effective learning of a new language. Our application currently allows users to learn Italian, but is structured for the potential to add additional languages in the future.
+
+
+### Screenshots
+
+<img src="src/media/images/login.png">
+
+<img src="src/media/images/signUp.png">
+
+<img src="src/media/images/dashboard.png">
+
+<img src="src/media/images/learning.png">
+
+### Tech Stack
+- Frontend: JavaScript, React, CSS (flexbox), media queries, 
+- Backend: Node.js, Express, Knex, PostgreSQL
+- Development/Hosting: Heroku, Ziet, GitHub, Cypress, Mocha
+
+#### Next Steps
+- Add additional words to database
+- Add options to add additional languages
+- Add options to archive word once mastered
+- Add features to listen to the pronunciation of words
+
 ## Setup
 
 To setup the application
