@@ -2,26 +2,32 @@ import React from 'react';
 import './Correct.css';
 import Button from '../../components/Button/Button';
 
-function CorrectRoute(props) {
-const handleClick = (event)=>{
-event.preventDefault()
-console.log(props)
-props.history.goBack()
-}
-  return (
-    <section className="correct-answer">
-      <div className="correct-feedback">
-      <h3>Good job, you got it correct!</h3>
-        <p>
-        Correct count: 5
-        </p>
-        <p>
-        Incorrect count: 2
-        </p>
-      </div>
-      <Button onClick={(e)=>handleClick(e)}type="submit">Next Word</Button>
-    </section>
-  )
+
+class CorrectRoute extends React.Component { 
+ 
+  handleClick = (event)=>{
+    console.log(this.props)
+    event.preventDefault()   
+    this.props.resetCorrect();
+    
+  }
+   
+  render(){
+    console.log(this.props)
+    return (
+     
+      <section className="correct-answer">
+        <div className="correct-feedback">
+        <h3>Good job, you got it correct!</h3>
+        <p>Correct count: {this.props.wordCorrectCount}</p>
+        <p>Incorrect count: {this.props.wordIncorrectCount}</p>
+        <p>Total Score: {this.props.totalScore}</p>
+        </div>
+        <Button onClick={(e)=>this.handleClick(e)}type="submit">Next Word</Button>
+      </section>
+    )
+  
+  }
 
 }
 

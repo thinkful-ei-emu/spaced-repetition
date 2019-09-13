@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Input, Label } from '../Form/Form'
 import AuthApiService from '../../services/auth-api-service'
-import UserContext from '../../contexts/UserContext'
+import Context from '../../contexts/Context'
 import Button from '../Button/Button'
 import '../Form/Form.css'
 
@@ -10,7 +10,7 @@ class LoginForm extends Component {
     onLoginSuccess: () => { }
   }
 
-  static contextType = UserContext
+  static contextType = Context
 
   state = { error: null }
 
