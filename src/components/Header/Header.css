@@ -54,4 +54,8 @@ a {
   nav{
     text-align: center;
   }
+  h1{
+    padding: 0px;
+    width: 100%;
+  }
 }
