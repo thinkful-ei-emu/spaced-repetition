@@ -13,6 +13,10 @@
   height: 100vh;
 }
 
+.bold{
+  font-weight: bold;
+}
+
 .correct-feedback{
   border: rgb(244, 226, 205) solid 1px;
   background-color: rgb(255, 255, 255);
