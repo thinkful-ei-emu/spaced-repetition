@@ -21,7 +21,9 @@ class CorrectRoute extends React.Component {
         <h3>Good job, you got it correct!</h3>
         <p>Correct count: {this.props.wordCorrectCount}</p>
         <p>Incorrect count: {this.props.wordIncorrectCount}</p>
-        <p>Total Score: {this.props.totalScore}</p>
+        <p>Your total score is: {this.props.totalScore}</p>         
+        <p>`The correct translation for ${languageHeadFixture.nextWord} was ${correctFixture.answer} and you chose ${this.props.guess}!`,
+        </p>
         </div>
         <Button onClick={(e)=>this.handleClick(e)}type="submit">Next Word</Button>
       </section>

@@ -40,12 +40,11 @@ describe(`User story: User's dashboard`, function() {
             `Total correct answers: ${language.total_score}`,
           )
 
-        cy.get('a')
-          .should('have.attr', 'href', '/learn')
-          .and('have.text', 'Start practicing')
+        cy.get('footer')
+          .should('have.text', 'Start Learning')
 
         cy.get('h3')
-          .should('have.text', 'Words to practice')
+          .should('include.text', 'Words to learn')
       })
     })
   })
@@ -61,14 +60,14 @@ describe(`User story: User's dashboard`, function() {
 
           cy.root()
             .should(
-              'contain',
-              `correct answer count: ${word.correct_count}`
+              'include.text',
+              `Correct:${word.correct_count}`
             )
 
           cy.root()
             .should(
               'contain',
-              `incorrect answer count: ${word.incorrect_count}`
+              `Incorrect:${word.incorrect_count}`
             )
         })
       })

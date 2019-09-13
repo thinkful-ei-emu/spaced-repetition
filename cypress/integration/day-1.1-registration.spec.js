@@ -16,7 +16,7 @@ describe(`User story: Register an account`, function() {
     cy.url()
       .should('eq', `${Cypress.config().baseUrl}/register`)
 
-    cy.get('main section').within($section => {
+    cy.get('main section').within($Registration => {
       cy.get('h2')
         .should('have.text', 'Sign up')
     })
@@ -115,7 +115,7 @@ describe(`User story: Register an account`, function() {
       }
       cy.visit('/register')
 
-      cy.get('section form').within($form => {
+      cy.get('form').within($form => {
         cy.get('#registration-name-input')
           .type(newUser.name)
         cy.get('#registration-username-input')

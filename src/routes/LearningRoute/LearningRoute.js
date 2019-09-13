@@ -96,7 +96,7 @@ class LearningRoute extends Component {
   }
 
   render() {
-    const {isCorrect, nextWord, nextWordCorrectCount, nextWordIncorrectCount, wordCorrectCount, wordIncorrectCount, totalScore} = this.state;
+    const {isCorrect, nextWord, guess, nextWordCorrectCount, nextWordIncorrectCount, wordCorrectCount, wordIncorrectCount, totalScore} = this.state;
      return (     
       <section className="learning-route">
        {isCorrect === null ?
@@ -110,9 +110,9 @@ class LearningRoute extends Component {
         <hr/>
         <p>You have answered this word correctly {nextWordCorrectCount} times.</p>
         <p>You have answered this word incorrectly {nextWordIncorrectCount} times.</p>  
-        </>: isCorrect ? <Correct resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
+        </>: isCorrect ? <Correct guess={guess} resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
          wordIncorrectCount={wordIncorrectCount} totalScore={totalScore}
-        /> : <Incorrect resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
+        /> : <Incorrect guess={guess}  resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
         wordIncorrectCount={wordIncorrectCount} totalScore={totalScore}/>}       
       </section>
      
