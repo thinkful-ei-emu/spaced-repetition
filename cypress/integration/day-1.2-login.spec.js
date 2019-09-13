@@ -25,13 +25,13 @@ describe(`User story: Login`, function() {
   it(`has navigation to login page in nav and form`, () => {
     cy.visit('/')
 
-    cy.get('header nav').within($nav => {
+    cy.get('main').within($main => {
       cy.get('a[href="/login"]')
         .should('be.visible')
-        .and('have.text', 'Login')
+        .and('have.text', 'Already have an account?')
     })
 
-    cy.get('main section').within($nav => {
+    cy.get('main').within($main => {
       cy.get('a[href="/login"]')
         .should('be.visible')
         .and('have.text', 'Already have an account?')
@@ -51,7 +51,7 @@ describe(`User story: Login`, function() {
   it('displays the login page', () => {
     cy.visit('/login')
 
-    cy.get('main section').within($section => {
+    cy.get('main div').within($section => {
       cy.get('h2').should(
         'have.text',
         'Login',
@@ -62,7 +62,7 @@ describe(`User story: Login`, function() {
   it(`displays the username and password fields`, () => {
     cy.visit('/login')
 
-    cy.get('section form').within(() => {
+    cy.get('form').within(() => {
       cy.get('label[for=login-username-input]')
         .should('have.text', 'Username')
       cy.get('input#login-username-input')

@@ -18,6 +18,12 @@ props.history.goBack()
         <p>
         Incorrect count: 2
         </p>
+          {/*  <p>
+        Your total score is: ${total_score}
+        </p> */}
+       {/*  <p>
+        `The correct translation for ${languageHeadFixture.nextWord} was ${correctFixture.answer} and you chose ${guess}!`,
+        </p> */}
       </div>
       <Button onClick={(e)=>handleClick(e)}type="submit">Next Word</Button>
     </section>

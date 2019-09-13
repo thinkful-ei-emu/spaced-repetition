@@ -20,6 +20,12 @@ function IncorrectRoute(props) {
         <p>
         Incorrect count: 4
         </p>
+       {/*  <p>
+        Your total score is: ${total_score}
+        </p> */}
+       {/*  <p>
+        `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`,
+        </p> */}
       </div>
       <Button onClick={(e)=>handleClick(e)}>Next Word </Button>
     </section>
