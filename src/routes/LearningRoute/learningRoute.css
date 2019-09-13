@@ -10,7 +10,7 @@
   background-size: 100vmax;
   background-position-y: bottom;
   height: 100vh;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 /* .learning-buttons{
@@ -20,6 +20,10 @@
  */
 .learning-buttons button{
   width: 270px;
+}
+
+.translate-label{
+  margin-top: 150px;
 }
 
 .word{
