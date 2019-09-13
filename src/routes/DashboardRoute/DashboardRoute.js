@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TokenService from '../../services/token-service'
-import UserContext from '../../contexts/UserContext'
+import Context from '../../contexts/Context'
 import config from '../../config'
 import './DashboardRoute.css'
 import Button from '../../components/Button/Button'
@@ -10,7 +10,7 @@ class DashboardRoute extends Component {
     language: {},
     words: [],
   }
-  static contextType = UserContext;
+  static contextType = Context;
 
   componentDidMount(){
     this.fetchLanguage();
@@ -28,6 +28,7 @@ class DashboardRoute extends Component {
       return res.json()
     })
       .then((resObj) => {
+        console.log(resObj);
         if(resObj.error){
           const {history} = this.props 
           this.context.processLogout();
@@ -55,7 +56,7 @@ class DashboardRoute extends Component {
         <div className="dash-header">
         <h2 className="dash-title">{language.name}</h2> 
           <div className="language-score"> 
-          Total correct answers: {language.total_score}
+          Total Score: {language.total_score}
           </div>
       </div>    
       
@@ -64,8 +65,8 @@ class DashboardRoute extends Component {
          {words.map(word => 
          <li className="dashboard-word" key={word.id}>
          <h4>{word.original}</h4>
-         Correct:{word.correct_count}<br></br>
-         Incorrect:{word.incorrect_count}
+         Correct: {word.correct_count}<br></br>
+         Incorrect: {word.incorrect_count}
          </li>)}
        </ul>
       

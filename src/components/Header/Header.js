@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
-import UserContext from '../../contexts/UserContext'
+import Context from '../../contexts/Context'
 import './Header.css'
 
 class Header extends Component {
-  static contextType = UserContext
+  static contextType = Context
 
   handleLogoutClick = () => {
     this.context.processLogout()

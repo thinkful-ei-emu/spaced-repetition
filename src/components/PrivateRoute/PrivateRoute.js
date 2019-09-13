@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import UserContext from '../../contexts/UserContext'
+import Context from '../../contexts/Context'
 
 export default function PrivateRoute({ component, ...props }) {
   const Component = component
@@ -8,20 +8,20 @@ export default function PrivateRoute({ component, ...props }) {
     <Route
       {...props}
       render={componentProps => (
-        <UserContext.Consumer>
-          {userContext =>
-            !!userContext.user.id
+        <Context.Consumer>
+          {Context =>
+            !!Context.user.id
               ? <Component {...componentProps} />
               : (
                 <Redirect
                   to={{
-                    pathname: userContext.user.idle ? '/login' : '/register',
+                    pathname: Context.user.idle ? '/login' : '/register',
                     state: { from: componentProps.location },
                   }}
                 />
               )
           }
-        </UserContext.Consumer>
+        </Context.Consumer>
       )}
     />
   )

@@ -1,20 +1,24 @@
 import React, { Component } from 'react'
 import config from '../../config'
 import TokenService from '../../services/token-service'
-import LearningFrom from './LearningForm'
-import LearningContext from '../../contexts/LearningContext';
+import LearningForm from './LearningForm'
+import Context from '../../contexts/Context'
 import './learningRoute.css'
+import Correct from '../CorrectRoute/Correct'
+import Incorrect from '../IncorrectRoute/Incorrect'
 
 class LearningRoute extends Component {
-  state = {
+  static contextType = Context;
+  state = { 
+    guess: null, 
     nextWord: null,
     wordCorrectCount: null,
     wordIncorrectCount: null,
+    nextWordCorrectCount: 0,
+    nextWordIncorrectCount: 0,
     totalScore: null,
-    guess: null,
+    isCorrect: null,  
   }
-  
-  static contextType = LearningContext
 
   componentDidMount(){
     this.fetchWord();
@@ -31,13 +35,13 @@ class LearningRoute extends Component {
       }
       return res.json()
     })
-      .then((resObj) => {
+      .then((resObj) => {       
         this.setState({
           nextWord: resObj.nextWord,
           wordCorrectCount: resObj.wordCorrectCount,
           wordIncorrectCount: resObj.wordIncorrectCount,
           totalScore: resObj.totalScore
-        })
+        })    
       })
       .catch(error => {  
         console.error({ error });
@@ -51,9 +55,8 @@ class LearningRoute extends Component {
   }
 
   submitGuess = (e) => {
-    e.preventDefault();
-  
-    const { guess } = e.target
+    e.preventDefault();   
+    const { guess } = e.target     
     const submittedGuess = {
       guess: guess.value
     }
@@ -70,38 +73,50 @@ class LearningRoute extends Component {
       }
       return res.json()
     })
-    .then((resObj) => {
-      console.log(resObj);
+    .then((resObj) => {      
       this.setState({
         nextWord: resObj.nextWord,
         wordCorrectCount: resObj.wordCorrectCount,
         wordIncorrectCount: resObj.wordIncorrectCount,
+        nextWordCorrectCount: resObj.nextWordCorrectCount,
+        nextWordIncorrectCount: resObj.nextWordIncorrectCount,
         totalScore: resObj.totalScore,
         isCorrect: resObj.isCorrect
-      })
-      resObj.isCorrect ?
-      this.props.history.push('/correct')
-      : this.props.history.push('/incorrect')
+      })    
     })
-    .catch(error => {  
+    .catch(error => { 
+      console.log('caught in error') 
       console.error({ error });
     });
   }
 
+  resetCorrect = () => {
+    this.setState({
+      isCorrect : null,
+    })
+  }
+
   render() {
-    return (
-      <section className="learning-route"> 
+    const {isCorrect, nextWord, guess, nextWordCorrectCount, nextWordIncorrectCount, wordCorrectCount, wordIncorrectCount, totalScore} = this.state;
+     return (     
+      <section className="learning-route">
+       {isCorrect === null ?
+       <> 
         <div className="word">
-        <h2>Translate the word:</h2> <span>{this.state.nextWord}</span>
+        <h2>Translate the word:</h2> <span>{nextWord}</span>
         </div>
-        <LearningFrom setGuess={this.setGuess} submitGuess={this.submitGuess}/>
-        <div className='Result-scores'>
-        <p>Your total score is: {this.state.totalScore}</p>
+        <LearningForm setGuess={this.setGuess} submitGuess={this.submitGuess}/>       
+        <p>Your total score is: {totalScore}</p>
+        
         <hr/>
-        <p>You have answered this word correctly {this.state.wordCorrectCount} times.</p>
-        <p>You have answered this word incorrectly {this.state.wordIncorrectCount} times.</p>          
-        </div>
+        <p>You have answered this word correctly {nextWordCorrectCount} times.</p>
+        <p>You have answered this word incorrectly {nextWordIncorrectCount} times.</p>  
+        </>: isCorrect ? <Correct guess={guess} resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
+         wordIncorrectCount={wordIncorrectCount} totalScore={totalScore}
+        /> : <Incorrect guess={guess}  resetCorrect={this.resetCorrect} nextWord={nextWord} wordCorrectCount={wordCorrectCount}
+        wordIncorrectCount={wordIncorrectCount} totalScore={totalScore}/>}       
       </section>
+     
     );
   }
 }

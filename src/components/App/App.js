@@ -7,22 +7,23 @@ import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute'
 import LoginRoute from '../../routes/LoginRoute/LoginRoute'
 import DashboardRoute from '../../routes/DashboardRoute/DashboardRoute'
 import LearningRoute from '../../routes/LearningRoute/LearningRoute'
-import CorrectRoute from '../../routes/CorrectRoute/Correct'
-import IncorrectRoute from '../../routes/IncorrectRoute/Incorrect'
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute'
 import './App.css'
 
+
 export default class App extends Component {
-  state = { hasError: false }
+  state = { hasError: false }  
 
   static getDerivedStateFromError(error) {
     console.error(error)
     return { hasError: true }
   }
 
+ 
   render() {
-    const { hasError } = this.state
+    const { hasError} = this.state
     return (
+      
       <div className='App'>
         <Header />
         <main>
@@ -38,15 +39,7 @@ export default class App extends Component {
             <PrivateRoute
               path={'/learn'}
               component={LearningRoute}
-            />
-            <PrivateRoute
-              path={'/correct'}
-              component={CorrectRoute}
-            />
-            <PrivateRoute
-              path={'/incorrect'}
-              component={IncorrectRoute}
-            />
+            />           
             <PublicOnlyRoute
               path={'/register'}
               component={RegistrationRoute}
@@ -61,6 +54,7 @@ export default class App extends Component {
           </Switch>
         </main>
       </div>
+
     );
   }
 }

@@ -3,7 +3,7 @@ import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service'
 import IdleService from '../services/idle-service'
 
-const UserContext = React.createContext({
+const Context = React.createContext({
   user: {},
   error: null,
   setError: () => {},
@@ -11,14 +11,28 @@ const UserContext = React.createContext({
   setUser: () => {},
   processLogin: () => {},
   processLogout: () => {},
+  nextWord: null,
+  wordCorrectCount: null,
+  wordIncorrectCount: null,
+  totalScore: null,
+  setAnswer: () => {}, 
+  setHead : () => {},
 })
 
-export default UserContext
+export default Context
 
-export class UserProvider extends Component {
+export class ContextProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { user: {}, error: null }
+    const state = { 
+    user: {}, 
+    error: null,
+    nextWord: null,
+    wordCorrectCount: null,
+    wordIncorrectCount: null,
+    totalScore: null,
+    guess: null,
+    isCorrect: null, }
 
     const jwtPayload = TokenService.parseAuthToken()
 
@@ -100,6 +114,25 @@ export class UserProvider extends Component {
         this.setError(err)
       })
   }
+  // setHead = answer => {
+  //   this.setState({
+  //     nextWord: answer.nextWord,
+  //     wordCorrectCount: answer.wordCorrectCount,
+  //     wordIncorrectCount: answer.wordIncorrectCount,
+  //     totalScore: answer.totalScore
+  //   })
+  // }
+
+  // setAnswer = answer => {
+  //   console.log('answer in setAnswer', answer)
+  //   this.setState({
+  //     nextWord: answer.nextWord,
+  //     wordCorrectCount: answer.wordCorrectCount,
+  //     wordIncorrectCount: answer.wordIncorrectCount,
+  //     totalScore: answer.totalScore,
+  //     isCorrect: answer.isCorrect
+  //   })
+  // }
 
   render() {
     const value = {
@@ -110,11 +143,17 @@ export class UserProvider extends Component {
       setUser: this.setUser,
       processLogin: this.processLogin,
       processLogout: this.processLogout,
+      // nextWord: this.state.nextWord,
+      // wordCorrectCount: this.state.wordCorrectCount,
+      // wordIncorrectCount: this.state.wordIncorrectCount, 
+      // totalScore: this.state.totalScore,
+      // setAnswer: this.setAnswer,
+      // setHead: this.setHead
     }
     return (
-      <UserContext.Provider value={value}>
+      <Context.Provider value={value}>
         {this.props.children}
-      </UserContext.Provider>
+      </Context.Provider>
     )
   }
 }

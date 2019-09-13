@@ -3,7 +3,7 @@ import { Input, Label } from '../../components/Form/Form'
 import Button from '../../components/Button/Button'
 
 class LearningForm extends React.Component{
-
+  
   render(){
     return(
       <form onSubmit={this.props.submitGuess} className="learn-guess-input-form">

@@ -5,6 +5,8 @@ const LearningContext = React.createContext({
   wordCorrectCount: null,
   wordIncorrectCount: null,
   totalScore: null,
+  setAnswer: () => {}, 
+  setHead : () => {},
 })
 
 export default LearningContext;
