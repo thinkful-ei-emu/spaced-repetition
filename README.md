@@ -1,9 +1,9 @@
 # Spaced Repetition Capstone
 
 # Spaced repetition API!
-Live API Link: 
+Live Link: 
 
-<https://shrouded-springs-60057.herokuapp.com/>
+<https://spaced-repetition.mac-thinkful.now.sh/register/>
 
 GitHub Links: 
 
